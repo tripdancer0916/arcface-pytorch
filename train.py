@@ -4,9 +4,11 @@ from data.dataset import Dataset
 import torch
 from torch.utils import data
 import torch.nn.functional as F
-from models import *
+from models.focal_loss import *
+from models.metrics import *
+from models.resnet import *
 import torchvision
-from utils.visualizer import Visualizer, view_model
+from utils.visualizer import Visualizer
 import torch
 import numpy as np
 import random
