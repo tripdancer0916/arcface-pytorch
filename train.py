@@ -1,12 +1,12 @@
 from __future__ import print_function
 import os
-from data import Dataset
+from data.dataset import Dataset
 import torch
 from torch.utils import data
 import torch.nn.functional as F
 from models import *
 import torchvision
-from utils import Visualizer, view_model
+from utils.visualizer import Visualizer, view_model
 import torch
 import numpy as np
 import random
