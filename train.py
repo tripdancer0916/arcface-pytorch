@@ -1,22 +1,14 @@
 from __future__ import print_function
-import os
-from data.dataset import Dataset
-import torch
-from torch.utils import data
-import torch.nn.functional as F
-from models.focal_loss import *
-from models.metrics import *
-from models.resnet import *
-import torchvision
-from utils.visualizer import Visualizer
-import torch
-import numpy as np
-import random
-import time
-from config.config import Config
-from torch.nn import DataParallel
+
 from torch.optim.lr_scheduler import StepLR
+from torch.utils import data
+
+from data.dataset import Dataset
+from models.focal_loss import FocalLoss
+from models.metrics import AddMarginProduct, ArcMarginProduct, SphereProduct
+from models.resnet import resnet18, resnet34, resnet50
 from test import *
+from utils.visualizer import Visualizer
 
 
 def save_model(model, save_path, name, iter_cnt):

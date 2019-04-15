@@ -5,14 +5,19 @@ Created on 18-5-30 下午4:55
 @author: ronghuaiyang
 """
 from __future__ import print_function
+
 import os
-import cv2
-from models import *
-import torch
-import numpy as np
 import time
-from config.config import Config
+
+import cv2
+import numpy as np
+import torch
 from torch.nn import DataParallel
+
+from config.config import Config
+from models.focal_loss import *
+from models.metrics import *
+from models.resnet import *
 
 
 def get_lfw_list(pair_list):
