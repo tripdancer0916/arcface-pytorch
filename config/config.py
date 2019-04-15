@@ -1,48 +1,49 @@
 class Config(object):
-    env = 'default'
-    backbone = 'resnet18'
-    classify = 'softmax'
-    num_classes = 13938
-    metric = 'arc_margin'
-    easy_margin = False
-    use_se = False
-    loss = 'focal_loss'
+    def __init__(self):
+        self.env = 'default'
+        self.backbone = 'resnet18'
+        self.classify = 'softmax'
+        self.num_classes = 13938
+        self.metric = 'arc_margin'
+        self.easy_margin = False
+        self.use_se = False
+        self.loss = 'focal_loss'
 
-    display = False
-    finetune = False
+        self.display = False
+        self.finetune = False
 
-    train_root = '/data/Datasets/webface/CASIA-maxpy-clean-crop-144/'
-    train_list = '/data/Datasets/webface/train_data_13938.txt'
-    val_list = '/data/Datasets/webface/val_data_13938.txt'
+        self.train_root = '/data/Datasets/webface/CASIA-maxpy-clean-crop-144/'
+        self.train_list = '/data/Datasets/webface/train_data_13938.txt'
+        self.val_list = '/data/Datasets/webface/val_data_13938.txt'
 
-    test_root = '/data1/Datasets/anti-spoofing/test/data_align_256'
-    test_list = 'test.txt'
+        self.test_root = '/data1/Datasets/anti-spoofing/test/data_align_256'
+        self.test_list = 'test.txt'
 
-    lfw_root = '/data/Datasets/lfw/lfw-align-128'
-    lfw_test_list = '/data/Datasets/lfw/lfw_test_pair.txt'
+        self.lfw_root = '/data/Datasets/lfw/lfw-align-128'
+        self.lfw_test_list = '/data/Datasets/lfw/lfw_test_pair.txt'
 
-    checkpoints_path = 'checkpoints'
-    load_model_path = 'models/resnet18.pth'
-    test_model_path = 'checkpoints/resnet18_110.pth'
-    save_interval = 10
+        self.checkpoints_path = 'checkpoints'
+        self.load_model_path = 'models/resnet18.pth'
+        self.test_model_path = 'checkpoints/resnet18_110.pth'
+        self.save_interval = 10
 
-    train_batch_size = 16  # batch size
-    test_batch_size = 60
+        self.train_batch_size = 16  # batch size
+        self.test_batch_size = 60
 
-    input_shape = (1, 128, 128)
+        self.input_shape = (1, 128, 128)
 
-    optimizer = 'sgd'
+        self.optimizer = 'sgd'
 
-    use_gpu = True  # use GPU or not
-    gpu_id = '0, 1'
-    num_workers = 4  # how many workers for loading data
-    print_freq = 100  # print info every N batch
+        self.use_gpu = True  # use GPU or not
+        self.gpu_id = '0, 1'
+        self.num_workers = 4  # how many workers for loading data
+        self.print_freq = 100  # print info every N batch
 
-    debug_file = '/tmp/debug'  # if os.path.exists(debug_file): enter ipdb
-    result_file = 'result.csv'
+        self.debug_file = '/tmp/debug'  # if os.path.exists(debug_file): enter ipdb
+        self.result_file = 'result.csv'
 
-    max_epoch = 50
-    lr = 1e-1  # initial learning rate
-    lr_step = 10
-    lr_decay = 0.95  # when val_loss increase, lr = lr*lr_decay
-    weight_decay = 5e-4
+        self.max_epoch = 50
+        self.lr = 1e-1  # initial learning rate
+        self.lr_step = 10
+        self.lr_decay = 0.95  # when val_loss increase, lr = lr*lr_decay
+        self.weight_decay = 5e-4

@@ -13,7 +13,7 @@ import torch
 import numpy as np
 import random
 import time
-from config import Config
+from config.config import Config
 from torch.nn import DataParallel
 from torch.optim.lr_scheduler import StepLR
 from test import *
